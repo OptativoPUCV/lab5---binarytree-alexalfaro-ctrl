@@ -630,3 +630,28 @@ Thu 14 Sep 2023 03:53:09 PM UTC:
  tests:  15|4
 total_score: 25/70
 318e8e3
+Thu 14 Sep 2023 07:36:22 PM UTC: 
+ treemap.c | 41 ++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 40 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:139:14: error: passing argument 1 of ‘remove’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  139 |       remove(tree,min);
+      |              ^~~~
+      |              |
+      |              TreeMap *
+In file included from test.c:1:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdio.h:152:32: note: expected ‘const char *’ but argument is of type ‘TreeMap *’
+  152 | extern int remove (const char *__filename) __THROW;
+      |                    ~~~~~~~~~~~~^~~~~~~~~~
+In file included from test.c:4:
+treemap.c:139:7: error: too many arguments to function ‘remove’
+  139 |       remove(tree,min);
+      |       ^~~~~~
+In file included from test.c:1:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdio.h:152:12: note: declared here
+  152 | extern int remove (const char *__filename) __THROW;
+      |            ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+64757e5
