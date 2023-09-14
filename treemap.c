@@ -74,7 +74,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value){
       if(temp->left==NULL){
         temp->left=nuevoNodo;
         tree->current=temp->left;
-        return;
       }else{
         temp=temp->left;
       }
@@ -82,7 +81,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value){
       if(temp->right==NULL){
         temp->right=nuevoNodo;
         tree->current=temp->right;
-        return;
       }else{
         temp=temp->right;
       }
