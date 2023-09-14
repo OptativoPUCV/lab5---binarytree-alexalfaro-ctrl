@@ -44,6 +44,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
     if (mapa!=NULL){
       mapa->root=NULL;
       mapa->lower_than=lower_than;
+      
       return mapa;
     
     }else{
@@ -83,6 +84,18 @@ Recuerde hacer que el current apunte al nodo encontrado.
   */
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
+    TreeNode* temp = tree->root;
+    while (temp!=NULL){
+      if (is_equal(tree,key,temp->pair->key)){
+        tree->current=temp;
+        return temp->pair;
+      }else if (tree->lower_than(key,temp->pair->key){
+        temp=temp->left;
+      }else{
+        temp=temp->right;
+      }
+    }
+  
     return NULL;
 }
 
