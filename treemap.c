@@ -62,11 +62,11 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   }
   TreeNode* temp = tree->root;
   while(1){
-    if(is_equal(tree,key,temp->pair->key)){
+    if(key==temp->pair->key){
 
       return;
     
-    }else if(tree->lower_than(key,temp->pair->key)){
+    }else if(key<temp->pair->key){
       if(temp->left==NULL){
         temp->left=nodonuevo;
         return;
