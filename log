@@ -39,3 +39,9 @@ treemap.c:43:5: error: conversion to non-scalar type requested
       |     ^~~~~~~
 Compilation failed
 1a33a27
+Thu 14 Sep 2023 12:36:26 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|7
+total_score: 5/70
+84f5739
