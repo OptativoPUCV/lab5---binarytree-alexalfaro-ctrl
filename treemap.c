@@ -72,6 +72,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value){
       return;
     }else if(tree->lower_than(key,temp->pair->key)){
       if(temp->left==NULL){
+        temp->parent=nuevoNodo;
         temp->left=nuevoNodo;
         tree->current=temp->left;
       }else{
@@ -79,6 +80,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value){
       }
     }else{
       if(temp->right==NULL){
+        temp->parent=nuevoNodo;
         temp->right=nuevoNodo;
         tree->current=temp->right;
       }else{
@@ -88,6 +90,54 @@ void insertTreeMap(TreeMap * tree, void* key, void * value){
   } 
 
 }
+/*
+void insertTreeMap(TreeMap * tree, void* key, void * value) {
+  if (tree == NULL) return;
+
+  TreeNode* nuevoNodo = createTreeNode(key, value);
+  if (tree->root == NULL){
+    
+    tree->root = nuevoNodo;
+    tree->current = nuevoNodo;
+  
+  } else {
+
+    // Partimos desde la raiz para hacer las comparaciones
+    TreeNode* current = tree->root;
+    while (1){
+      if (is_equal(tree, key, current->pair->key)){ // si key es igual
+        
+        free(nuevoNodo);
+        return;
+      
+      } else if (tree->lower_than(key,current->pair->key)) { // si key es menor
+        
+        if (current->left == NULL){ // espacio vacio encontrado, insertar
+          current->left = nuevoNodo;
+          nuevoNodo->parent = current;
+          tree->current = nuevoNodo;
+          return;
+        } else { // seguir iterando
+          current = current->left;
+        }
+        
+      } else { // si key es mayor
+        
+        if (current->right == NULL){ // espacio vacio encontrado, insertar
+          current->right = nuevoNodo;
+          nuevoNodo->parent = current;
+          tree->current = nuevoNodo;
+          return;  
+        } else { // seguir iterando
+          current = current->right;
+        }
+        
+      }
+    }
+  }
+}
+ Un abrazo psicologico
+*/
 
 TreeNode * minimum(TreeNode * x){
 
