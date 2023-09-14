@@ -65,17 +65,19 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     if(key<temp->pair->key){
       if(temp->left==NULL){
         temp->left=nodonuevo;
+        return;
       }
       temp=temp->left;
     }else if(key>temp->pair->key){
       if(temp->right==NULL){
         temp->right=nodonuevo;
+        return;
       }
       temp=temp->right;
       }else{
         temp->pair->value=value;
         free(nodonuevo);
-        break;  
+        return; 
       }
     }
   }
