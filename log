@@ -550,3 +550,53 @@ treemap.c:80:16: error: request for member ‘right’ in something not a struct
 cc1: all warnings being treated as errors
 Compilation failed
 5d67e2b
+Thu 14 Sep 2023 01:47:01 PM UTC: 
+ treemap.c | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:59:3: error: ‘nuevoNodo’ undeclared (first use in this function)
+   59 |   nuevoNodo=createTreeNode(key,value);
+      |   ^~~~~~~~~
+treemap.c:59:3: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:63:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+   63 |   treeNode* temp=tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:63:18: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+   63 |   treeNode* temp=tree->root;
+      |                  ^~~~
+treemap.c:65:16: error: request for member ‘pair’ in something not a structure or union
+   65 |     if(key<temp->pair->key){
+      |                ^~
+treemap.c:66:14: error: request for member ‘left’ in something not a structure or union
+   66 |       if(temp->left==NULL){
+      |              ^~
+treemap.c:67:13: error: request for member ‘left’ in something not a structure or union
+   67 |         temp->left=nuevoNodo;
+      |             ^~
+treemap.c:70:16: error: request for member ‘left’ in something not a structure or union
+   70 |       temp=temp->left;
+      |                ^~
+treemap.c:71:24: error: request for member ‘pair’ in something not a structure or union
+   71 |     }else if(key > temp->pair->key){
+      |                        ^~
+treemap.c:72:14: error: request for member ‘right’ in something not a structure or union
+   72 |       if(temp->right==NULL){
+      |              ^~
+treemap.c:73:13: error: request for member ‘right’ in something not a structure or union
+   73 |         temp->right=nuevoNodo;
+      |             ^~
+treemap.c:75:7: error: expected expression before ‘}’ token
+   75 |       }
+      |       ^
+treemap.c:75:7: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+treemap.c:58:6: note: declared here
+   58 | void insertTreeMap(TreeMap * tree, void* key, void * value){
+      |      ^~~~~~~~~~~~~
+treemap.c:76:16: error: request for member ‘right’ in something not a structure or union
+   76 |       temp=temp->right;
+      |                ^~
+cc1: all warnings being treated as errors
+Compilation failed
+e344cdf
