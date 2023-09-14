@@ -75,8 +75,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       }
       temp=temp->right;
       }else{
-        temp->pair->value=value;
-        free(nodonuevo);
+
         return; 
       }
     }
