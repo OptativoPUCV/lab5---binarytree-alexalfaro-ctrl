@@ -147,3 +147,20 @@ treemap.c:83:3: error: expected identifier or ‘(’ before ‘}’ token
       |   ^
 Compilation failed
 0f71ed8
+Thu 14 Sep 2023 05:24:53 AM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:69:6: error: ‘else’ without a previous ‘if’
+   69 |     }else if(tree->lower_than(key,temp->pair->key){
+      |      ^~~~
+treemap.c:69:51: error: expected ‘)’ before ‘{’ token
+   69 |     }else if(tree->lower_than(key,temp->pair->key){
+      |             ~                                     ^
+      |                                                   )
+treemap.c:83:3: error: expected expression before ‘}’ token
+   83 |   }
+      |   ^
+Compilation failed
+67d5ba7
