@@ -189,7 +189,11 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   if(tree!=NULL&&tree->current!=NULL){
-    
+    if(tree->current->right!=NULL){
+      tree->current=minimum(tree->current->right);
+      return tree->current->pair;
+      }
+    }
     
   }
     return NULL;
