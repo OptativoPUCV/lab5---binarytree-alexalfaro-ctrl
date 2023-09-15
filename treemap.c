@@ -192,9 +192,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right!=NULL){
       tree->current=minimum(tree->current->right);
       return tree->current->pair;
-      
     }
-    
+    TreeNode* temp=tree->current;
+    TreeNode* padre=temp->parent;
+    while(padre!=NULL&& temp==padre->right){
+      temp=padre;
+      padre=padre->parent;
+    }
+    tree->current=padre;
   }
   return NULL;
 }
