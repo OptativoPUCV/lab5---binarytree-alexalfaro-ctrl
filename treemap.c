@@ -200,6 +200,9 @@ Pair * nextTreeMap(TreeMap * tree) {
       padre=padre->parent;
     }
     tree->current=padre;
+    if(padre!=NULL){
+      return padre->pair;
+    }
   }
   return NULL;
 }
